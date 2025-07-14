@@ -1,4 +1,4 @@
-# import requests; exec(requests.get('https://raw.githubusercontent.com/dnlrv/PyTest/refs/heads/main/example.py').content.decode('utf-8'))
+# import requests; exec(requests.get('https://raw.githubusercontent.com/dnlrv/PyTest/refs/heads/main/main.py').content.decode('utf-8'))
 
 import requests
 import json
@@ -15,7 +15,7 @@ py_paths = [
 ]
 
 for s in py_paths:
-    print(f'I am getting https://raw.githubusercontent.com/dnlrv/PyTest/main/{s}')
+    #print(f'I am getting https://raw.githubusercontent.com/dnlrv/PyTest/main/{s}')
     script = requests.get(f'https://raw.githubusercontent.com/dnlrv/PyTest/main/{s}').content.decode('utf-8')
-    print(script)
+    #print(script)
     exec(script)
