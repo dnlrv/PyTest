@@ -8,8 +8,10 @@ maintree = requests.get(tree_url)
 tree_data = json.loads(maintree.text)
 print(tree_data)
 py_paths = [
-    p for p in tree_data['tree']
-    if p['path'].endswith('.py') and p['path'] != 'main.py'
+    entry['path']
+    for entry in tree_data.get('tree', [])
+    if entry.get('path', '').endswith('.py')
+       and entry['path'] != 'main.py'
 ]
 
 for s in py_paths:
