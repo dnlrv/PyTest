@@ -6,7 +6,7 @@ import json
 tree_url = 'https://api.github.com/repos/dnlrv/PyTest/git/trees/main?recursive=1'
 maintree = requests.get(tree_url)
 tree_data = json.loads(maintree.text)
-print(tree_data)
+#print(tree_data)
 py_paths = [
     entry['path']
     for entry in tree_data.get('tree', [])
